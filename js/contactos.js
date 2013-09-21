@@ -65,7 +65,7 @@ function datosContacto(nom,tel,mail){
 	telefonos[0] = new ContactField("home", tel, true);
 	contacto.phoneNumbers = telefonos;
 	var correos = [];
-	correos[0] = new ContactField("personal", email, true);
+	correos[0] = new ContactField("personal", mail, true);
 	contacto.emails = correos;	
 	contacto.save(nuevoCorrecto,nuevoError);
 }
