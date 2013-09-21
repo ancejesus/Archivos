@@ -4,6 +4,7 @@ $(function(){
 		LeerContactos();
 	});	
 	$('#ncSend').tap(function(){
+		alert('uno');
 		nuevoContacto($('#ncNom').val(),$('#ncTel').val(),$('#ncMail').val());
 	});
 });
@@ -45,12 +46,14 @@ function onError1(contactError) {
 
 //Crear Contactos
 function nuevoContacto(nom,tel,mail){
+	alert('dos');
 	document.addEventListener("deviceready",function(){
 		datosContacto(nom,tel,mail);},false);
 	
 }
 //Crear módulo de nuevo contacto
 function datosContacto(nom,tel,mail){
+	alert('tres');
 	var contacto = navigator.contacts.create();
 	contacto.displayName = nom;
 	contacto.nickname = nom;
@@ -69,11 +72,11 @@ function datosContacto(nom,tel,mail){
 }
 
 function nuevoError(err) {
-	alert.('Error: '+ err.code);
+		alert('Error: '+ err.code);
 }
 
 function nuevoCorrecto(){
-	alert.('Contácto Creado Satisfactoriamente');
+	alert('Contácto Creado Satisfactoriamente');
 	$('#ncNom').val('');
 	$('#ncTel').val('');
 	$('#ncMail').val('');
